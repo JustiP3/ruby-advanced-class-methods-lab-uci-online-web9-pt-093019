@@ -90,9 +90,7 @@ new_song.save
 end # end of method
 
 def self.destroy_all
-@@all.each do |song|
-  song.delete
-end #end of each block
+@@all.delete_if {|song| song.class == Song}
 end #end of method
 
 end #end of Song class
