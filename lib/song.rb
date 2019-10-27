@@ -54,7 +54,7 @@ end #end of method
 
   new_array =  @@all.sort do  |instance_element1, instance_element2|
     instance_element1.name <=> instance_element2.name
-end
+end #end of sort block
 
 # new array is sorted but has duplicates for some reason
 # ergo -> delete all duplicates
@@ -64,12 +64,23 @@ end
   new_array.each do |song_instance|
 if duplicate_check_array.include?(song_instance) == false
   duplicate_check_array << song_instance  # only add unique songs to to array
-end #end of if
-
-  end #end of each
+  end #end of if
+end #end of each block
 
  return duplicate_check_array
 
-  end #end of method
+  end #end of alphabetical method
 
-end
+def self.new_from_filename(filename)
+  new_song = self.create  #instantiate a song instance
+
+  array = filename.split(" - ") #split filename
+  new_song.artist_name = array[0] #assign artist_name
+
+  array[1].split(".") #split file extention
+  new_song.name = array[1][0]
+
+  return new_song 
+end #end of method
+
+end #end of Song class
