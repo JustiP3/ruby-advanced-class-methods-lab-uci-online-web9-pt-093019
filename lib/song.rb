@@ -74,7 +74,7 @@ end #end of each block
 def self.new_from_filename(filename)
   new_song = self.create  #instantiate a song instance
 
-  array = filename.split(" - ") #split filename  
+  array = filename.split(" - ") #split filename
   new_song.artist_name = array[0] #assign artist_name
 
 binding.pry
