@@ -79,7 +79,7 @@ def self.new_from_filename(filename)
 
 binding.pry
   array[1].split(".") #split file extention
-  new_song.name = array[1][0]
+  new_song.name = array[1[0]]
 binding.pry
   return new_song
 end #end of method
