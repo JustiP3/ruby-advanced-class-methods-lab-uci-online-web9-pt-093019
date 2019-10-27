@@ -77,10 +77,10 @@ def self.new_from_filename(filename)
   array = filename.split(" - ") #split filename
   new_song.artist_name = array[0] #assign artist_name
 
-  name_with_extention = array[1]
-  name_with_extention.split(".") #split file extention
-  new_song.name = name_with_extention[0]
-binding.pry
+  new_song.name = array[1].split(".")[0] #split file extention
+  #array[1] is name with file extention
+  #split at the "." then return only the name
+
   return new_song
 end #end of method
 
